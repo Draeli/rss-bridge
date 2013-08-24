@@ -69,6 +69,11 @@ Technical notes
 
 Bridge implementation
 ===
+ * Each bridge come with its own implementation. Rss-bridge library provides easy tools to perform implementation. That means you need only to follow these steps :  
+
+ 1 : Go in 'src/Draeli/RssBridge/Adapter/Bridge' directory and create a file named under convention [Name]Bridge.php where 'Name' begin at least by one alphabetic character follow or not by one or more alphanumeric characters included dash.  
+
+ 2 : Open this file and copy this :
 
 ```PHP
 namespace Draeli\RssBridge\Adapter\Bridge;
