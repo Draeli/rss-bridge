@@ -80,8 +80,8 @@ namespace Draeli\RssBridge\Adapter\Bridge;
 use Draeli\RssBridge\Html;
 use Draeli\RssBridge\Item;
 
-class [Name]Bridge extends \Draeli\RssBridge\BridgeAbstract{ /* here your implementation */ }
-```
+class NameBridge extends \Draeli\RssBridge\BridgeAbstract{ /* here your implementation */ }
+```  
   Don't forget to change 'Name' in order to have the same your declare as file name.  
 
   3 : Now you have your class, you need at least to implement defined methods in 'BridgeInterface', actually there are :
@@ -108,7 +108,7 @@ $yourItemObject->theKeyName = $yourValue;
 * @use1(q="keyword",q2="keyword 2")
 * @use2(other="something",another="what else ...")
 */
-```
+```  
   @name Return name bridge  
   @description Return the discription of your bridge  
   @use[n](keyName="key description") For each use, if there is expected parameters, only put the key name and a little description and separates parameters by a comma. If your bridge doesn't use parameters, don't declare @use annotation.  
