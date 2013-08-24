@@ -12,6 +12,7 @@ Supported sites/pages
  * `Identi.ca` : Identita user timeline (Should be compatible with other Pump.io instances).
  * `YouTube` : YouTube user channel feed.
  * `Cryptome` : Returns the most recent documents from Cryptome.org.
+ * `LeBonCoin` : Search product on 'leboncoin.fr'.
 
 
 Output format

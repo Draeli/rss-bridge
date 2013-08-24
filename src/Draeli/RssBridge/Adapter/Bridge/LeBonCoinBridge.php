@@ -7,6 +7,8 @@ use Draeli\RssBridge\Html,
 /**
 * LeBonCoinBridge
 *
+* @author Yves ASTIER <contact@yves-astier.com>
+*
 * @name leboncoin.fr
 * @description Retourne les offres ou demandes pour des critères spécifiques
 * @use1(use=1,q="vous cherchez ?",location="ville ou CP",ps="prix minimum",pe="prix maximum")
