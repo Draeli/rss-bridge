@@ -118,7 +118,7 @@ Some "keyName" are reserved for specific usage like 'title', 'content', 'uri'.
 
 @name Return name bridge  
 @description Return the discription of your bridge  
-@use[n](keyName="key description") For each use, if there is expected parameters, only put the key name and a little description and separates parameters by a comma. If your bridge doesn't use parameters, don't declare @use annotation.  
+@useN(keyName="key description") For each use, if there is expected parameters, only put the key name and a little description and separates parameters by a comma. If your bridge doesn't use parameters, don't declare @use annotation.  
 
 6 : At this point, all is suppose to be good, you need only to open the main entrance page (web/index.php) and check if your bridge appears. To learn and understand details, don't hesitate to read existing bridges and after, when all will be fine, don't forget to share :)
 
