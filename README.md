@@ -29,7 +29,7 @@ Screenshot
 
 Welcome screen:
 
-![Screenshot](http://sebsauvage.net/galerie/photos/Bordel/rss-bridge-screenshot-3.png)
+![Screenshot](http://rss-bridge.yves-astier.com/screen.png)
    
 Minecraft hashtag (#Minecraft) search on Twitter, in ATOM format (as displayed by Firefox):
 
