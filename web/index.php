@@ -21,8 +21,11 @@ try{
                         Html::setCache($cache); // Comment this lign for avoid cache use
                     }
 
+                    $bridgeConfig = ( isset($arrConfig) && isset($arrConfig['bridge']) && isset($arrConfig['bridge'][$nameBridge]) ? $arrConfig['bridge'][$nameBridge] : array() );
+
                     // Data retrieval
                     $bridge
+                        ->setConfig( $bridgeConfig ) // Set config
                         ->setParameter($_REQUEST) // Set specific parameters needed by the bridge
                         ->collectData(); // Run all stuff to collect data.
 

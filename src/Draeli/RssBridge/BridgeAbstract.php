@@ -6,7 +6,8 @@ use Draeli\RssBridge\Item;
 abstract class BridgeAbstract implements BridgeInterface{
     private
         $items = array(), // Collect datas are stored in this variable
-        $param = array()
+        $param = array(),
+        $config = array()
     ;
 
     /**
@@ -45,6 +46,25 @@ abstract class BridgeAbstract implements BridgeInterface{
     */
     public function getParameter(){
         return $this->param;
+    }
+
+    /**
+    * Defined config
+    * @param array $config
+    * @return $this
+    */
+    public function setConfig(array $config){
+        $this->config = $config;
+
+        return $this;
+    }
+
+    /**
+    * Get config defined
+    * @return array
+    */
+    public function getConfig(){
+        return $this->config;
     }
 
     /**

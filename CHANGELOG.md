@@ -1,6 +1,11 @@
 rss-bridge Changelog
 ===
 
+Alpha 0.3
+===
+ * Now bridges support configuration, see "LeBonCoinBridge.php" for usage example.
+ * Unstable.
+
 Alpha 0.2
 ===
  * Refactoring to add composer, autoload, namespace and better stored directory

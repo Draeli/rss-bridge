@@ -17,6 +17,7 @@ use Draeli\RssBridge\Html,
 class LeBonCoinBridge extends \Draeli\RssBridge\BridgeAbstract{
     public function collectData(){
         $parameter = $this->getParameter();
+        $config = $this->getConfig();
 
         // Type d'annonce
         $typeAnnonce = 'offres';
@@ -24,17 +25,24 @@ class LeBonCoinBridge extends \Draeli\RssBridge\BridgeAbstract{
             $typeAnnonce = 'demandes';
         }
 
-        $saveImage = true;
-        // if( isset($parameter['image']) ){ // FIXME : ajouter le système de config avant de remettre en place
-            // $saveImage = true;
-        // }
+        // Affichage des images avec le résultat ?
+        $saveImage = false;
+        if( isset($config['displayImage']) ){
+            $saveImage = (bool)$config['displayImage'];
+        }
 
-        // FIXME : 35 résultats par page *1 = 35 résultats (au delà pour l'instant ca me claque entre les doigts dans certains cas, voir pourquoi)
-        for($i = 1; $i < 2; $i++){
+        // Nombre de pages
+        $numberOfPages = 1;
+        if( isset($config['numberOfPages']) && preg_match('@^[1-9][0-9]*$@U', $config['numberOfPages']) ){
+            $numberOfPages = (int)$config['numberOfPages'];
+        }
+
+        // FIXME : 35 résultats par page (pour l'instant au dela de 2 pages, ca me claque entre les doigts dans certains cas, voir pourquoi)
+        for($i = 0; $i < $numberOfPages; $i++){
             // Préparation des paramètres
             $urlParam = array(
                 'sp' => 0, // Trier par date
-                'o' => $i, // Page 1 par défaut
+                'o' => $i + 1, // Page 1 par défaut
             );
             foreach(array('q', 'location', 'ps', 'pe') as $key){
                 if( isset($parameter[$key]) && !empty($parameter[$key]) ){
