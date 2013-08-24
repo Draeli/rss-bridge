@@ -75,7 +75,6 @@ Bridge implementation
 
  2 : Open this file and copy this :
 ```PHP
-<?php
 namespace Draeli\RssBridge\Adapter\Bridge;
 
 use Draeli\RssBridge\Html;
