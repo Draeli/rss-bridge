@@ -69,8 +69,10 @@ Technical notes
 
 Bridge implementation
 ===
- * Each bridge come with its own implementation. Rss-bridge library provides easy tools to perform implementation. That means you need only to follow these steps :
- 1 : Go in 'src/Draeli/RssBridge/Adapter/Bridge' directory and create a file named under convention [Name]Bridge.php where 'Name' begin at least by one alphabetic character follow or not by one or more alphanumeric characters included dash.
+ * Each bridge come with its own implementation. Rss-bridge library provides easy tools to perform implementation. That means you need only to follow these steps :  
+
+ 1 : Go in 'src/Draeli/RssBridge/Adapter/Bridge' directory and create a file named under convention [Name]Bridge.php where 'Name' begin at least by one alphabetic character follow or not by one or more alphanumeric characters included dash.  
+
  2 : Open this file and copy this :
 ```PHP
 <?php
@@ -81,12 +83,14 @@ use Draeli\RssBridge\Item;
 
 class [Name]Bridge extends \Draeli\RssBridge\BridgeAbstract{ /* here your implementation */ }
 ```
-  Don't forget to change 'Name' in order to have the same your declare as file name.
+  Don't forget to change 'Name' in order to have the same your declare as file name.  
+
   3 : Now you have your class, you need at least to implement defined methods in 'BridgeInterface', actually there are :
   - getName : human bridge name
   - getURI : URI reference for the bridge
   - getCacheDuration : cache duration supposed to be the bridge. (optional, by default duration is 1 hour)
-  - collectData : to recover informations (see next step for details)
+  - collectData : to recover informations (see next step for details)  
+
   4 : 'collectData' is the most important method, it's important to read this before begin your first bridge !!!
   - First to know, method receives only one parameter which is (and must be) an array with all stuff you are supposed to use (if you use the default index.php, you don't need to know more about now).
   - At least, you want to call an URL, for making this, use 'Html::getFromUrl' method with your URL as first and only one argument. Then, the method will send you an object which represents a code source returnable by your call (it's important that the page you're calling use derived language from XML, for example : HTML4, XHTML, HTML5, XML, SVG, XSLT, RSS, ...).
@@ -95,7 +99,8 @@ class [Name]Bridge extends \Draeli\RssBridge\BridgeAbstract{ /* here your implem
 ```PHP
 $yourItemObject->theKeyName = $yourValue;
 ```
-  Some "keyName" are reserved for specific usage like 'title', 'content', 'uri'.
+  Some "keyName" are reserved for specific usage like 'title', 'content', 'uri'.  
+
   5 : at this point, you can stop doing the code, now if you want your bridge appears in global list (web/index.php), you must defined some Annotations to your class. For example :
 ```PHP
 /**
@@ -105,9 +110,10 @@ $yourItemObject->theKeyName = $yourValue;
 * @use2(other="something",another="what else ...")
 */
 ```
-  @name Return name bridge
-  @description Return the discription of your bridge
-  @use[n](keyName="key description") For each use, if there is expected parameters, only put the key name and a little description and separates parameters by a comma. If your bridge doesn't use parameters, don't declare @use annotation.
+  @name Return name bridge  
+  @description Return the discription of your bridge  
+  @use[n](keyName="key description") For each use, if there is expected parameters, only put the key name and a little description and separates parameters by a comma. If your bridge doesn't use parameters, don't declare @use annotation.  
+
   6 : At this point, all is suppose to be good, you need only to open the main entrance page (web/index.php) and check if your bridge appears. To learn and understand details, don't hesitate to read existing bridges and after, when all will be fine, don't forget to share :)
 
 
