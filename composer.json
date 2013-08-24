@@ -1,0 +1,31 @@
+{
+    "name": "draeli/rss-bridge",
+    "type": "library",
+    "version": "0.2",
+    "description": "rss-bridge is a php script capable of generating ATOM feed for specific pages which don't have one.",
+    "keywords": ["rss", "bridge", "atom", "json", "html", "flickr", "google", "twitter"],
+    "homepage": "https://github.com/sebsauvage/rss-bridge",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yves ASTIER",
+            "email": "contact@yves-astier.com",
+            "homepage": "https://github.com/Draeli",
+            "role": "Developer"
+        },
+        {
+            "name": "Sebsauvage",
+            "email": "sebsauvage@sebsauvage.net",
+            "homepage": "https://github.com/sebsauvage",
+            "role": "Developer"
+        }
+    ],
+    "require":{
+        "php": ">=5.3.2",
+        "sunra/php-simple-html-dom-parser": "*",
+        "draeli/annotation": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "Draeli\\RssBridge": "src/" }
+    }
+}

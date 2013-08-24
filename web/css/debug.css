@@ -1,0 +1,5 @@
+#debug{margin:.5rem;padding:1rem 1rem 0;font-size:1rem;border:1px dashed red;}
+#debug h1{font-size:1.2rem;font-weight:700;text-decoration:underline;text-transform:uppercase;}
+#debug h2{font-weight:700;}
+#debug .listDetail > li{font-size:.9rem;}
+#debug section{max-width:none;}

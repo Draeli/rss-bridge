@@ -1,0 +1,8 @@
+- html5shiv à mettre dans le projet pour éviter les appels externes
+- implement annotation cache for entrance page
+- see FIXME mentions in the code
+- implement header('X-Cached-Version: '.date(DATE_ATOM, filemtime($cachefile)));
+- ajouter le cache via le localstorage ?
+- add system to load adapter from other directory
+- add system to write bridge in easy syntax
+- trouver une idée pour exploiter Html::imgToData64 dans le cache lors du premier passage
