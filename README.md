@@ -42,14 +42,38 @@ Requirements
  * composer.phar for installation (actually is installed [PHP Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net))
  * (recommended) Ssl lib activated in PHP config
 
- Note : you can change DEBUG to true in 'app/autoload.php' and go in 'web/check_server.php' to check if you server configuration support what's necessary.
+Note : you can change DEBUG to true in 'app/autoload.php' and go in 'web/check_server.php' to check if you server configuration support what's necessary.
+
+
+Install
+===
+
+ * 1 : download composer : http://getcomposer.org/download/ in a directory
+ * 2 : create a clone of this project by :
  
- 
+```Shell
+git clone https://github.com/Draeli/rss-bridge.git rss-bridge
+```
+
+ * 3 : install project by :
+
+```Shell
+php composer.phar install
+```
+
+ * 4 : no more :)
+
+You can try to do all in one by :
+
+```Shell
+php -r "eval('?>'.file_get_contents('https://getcomposer.org/installer'));" && git clone https://github.com/Draeli/rss-bridge.git rss-bridge && cd rss-bridge && php ../composer.phar install
+```
+
 Author
 ===
-I'm sebsauvage, webmaster of [sebsauvage.net](http://sebsauvage.net), author of [Shaarli](http://sebsauvage.net/wiki/doku.php?id=php:shaarli) and [ZeroBin](http://sebsauvage.net/wiki/doku.php?id=php:zerobin).
-
 Yves ASTIER ([Draeli](https://github.com/Draeli)) : PHP refactoring, optimizations, fixes, dynamic brigde/format list with all stuff behind and extend cache system. Documentation and some bridges. Mail : contact@yves-astier.com
+
+I'm sebsauvage, webmaster of [sebsauvage.net](http://sebsauvage.net), author of [Shaarli](http://sebsauvage.net/wiki/doku.php?id=php:shaarli) and [ZeroBin](http://sebsauvage.net/wiki/doku.php?id=php:zerobin).
 
 Patch :
  * [Mitsukarenai](https://github.com/Mitsukarenai) : Initial inspiration, TwitterBridge, IdenticaBridge, YoutubeBridge.
@@ -64,8 +88,8 @@ MIT License. Only limit is to keep original author.
 
 Technical notes
 ===
-  * There is a cache so that source services won't ban you even if you hammer the rss-bridge with requests. Each bridge has a different duration for the cache. The `cache` subdirectory will be automatically created. You can purge it whenever you want.
-  * To implement a new rss-bridge, create a new class in `bridges` subdirectory. Look at existing bridges for examples. For items you generate in `$this->items`, only `uri` and `title` are mandatory in each item. `timestamp` and `content` are optional but recommended. Any additional key will be ignored by ATOM feed (but outputed to jSon).
+* There is a cache so that source services won't ban you even if you hammer the rss-bridge with requests. Each bridge has a different duration for the cache. The `cache` subdirectory will be automatically created. You can purge it whenever you want.
+* To implement a new rss-bridge, create a new class in `bridges` subdirectory. Look at existing bridges for examples. For items you generate in `$this->items`, only `uri` and `title` are mandatory in each item. `timestamp` and `content` are optional but recommended. Any additional key will be ignored by ATOM feed (but outputed to jSon).
 
 Bridge implementation
 ===
@@ -86,7 +110,7 @@ class NameBridge extends \Draeli\RssBridge\BridgeAbstract{
 }
 ```
 
-  Don't forget to change 'Name' in order to have the same your declare as file name.  
+Don't forget to change 'Name' in order to have the same your declare as file name.  
 
 3 : Now you have your class, you need at least to implement defined methods in 'BridgeInterface', actually there are :
 - getName : human bridge name
