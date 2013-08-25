@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Draeli/Annotation.git",
-                "reference": "f1add5692d70049fe33b938236a3edc0c1aeddb7"
+                "reference": "26133bbc80b110191e01ce07453a34b24abfa30f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Draeli/Annotation/zipball/f1add5692d70049fe33b938236a3edc0c1aeddb7",
-                "reference": "f1add5692d70049fe33b938236a3edc0c1aeddb7",
+                "url": "https://api.github.com/repos/Draeli/Annotation/zipball/26133bbc80b110191e01ce07453a34b24abfa30f",
+                "reference": "26133bbc80b110191e01ce07453a34b24abfa30f",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 "method",
                 "php"
             ],
-            "time": "2013-08-23 23:39:22"
+            "time": "2013-08-25 17:33:14"
         },
         {
             "name": "sunra/php-simple-html-dom-parser",
